@@ -1,6 +1,6 @@
 <article class="post">
   <header>
-    <h2><%= link_to post.title, post %></h2>
+    <h3><%= link_to post.title, post %></h3>
     Criado em: <%= time_tag post.created_at %>
   </header>
   <p><%= post.content.slice(0, 50) + '...' %></p>
