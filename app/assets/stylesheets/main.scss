@@ -4,3 +4,26 @@ header{
 h2, h3{
   text-transform: capitalize;
 }
+
+.pre{
+  white-space: pre;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.post{
+  p { 
+    @extend .pre;
+  }
+}
+
+.comments{
+  padding: 1%;
+
+  .comment{
+    p {
+      @extend .pre;
+      padding: 1% 0;
+    }
+  }
+}

@@ -6,6 +6,8 @@ class Comment
   field :message, type: String
 
   belongs_to  :post
+  
+  validates_presence_of :author, :message
 
-  validates_uniqueness_of :author, :message
+  default_scope -> { order_by(created_at: :asc) }
 end

@@ -5,6 +5,21 @@
       <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-link' %>
     </h2>
     Criado em <%= time_tag @post.created_at %>
-  </header>
+</header>
   <p><%= @post.content %></p>
+
+  <section class="comments">
+    <h3>Comentários</h3>
+
+    <%= render @post.comments %>
+    <h3>Comentar</h3>
+    <%= simple_form_for(@new_comment) do |f| %>
+      <%= f.input :author %>
+      <%= f.input :message, as: :text %>
+      <%= f.input :post_id, as: :hidden, input_html: { value: @post.id } %>
+      <%= f.button :submit %>
+    <% end %>
+    
+  </section>
+
 </article>
