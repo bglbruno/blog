@@ -1,6 +1,6 @@
-<h2>Listing Posts</h2>
+<h2><%= t('.title') %></h2>
 
-<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
+<%= link_to t('.new'), new_post_path, class: 'btn btn-primary' %>
 
 <section class="posts">
   <%= render @posts %>

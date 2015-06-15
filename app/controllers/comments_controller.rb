@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     respond_to do |format|
-      if @comment.save!
+      if @comment.save
         format.html { redirect_to @comment.post, notice: 'Comentário adicionado com sucesso.' }
       else
         format.html { redirect_to @comment.post }

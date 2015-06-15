@@ -2,18 +2,24 @@
   <header>
     <h2>
       <%= @post.title %>
-      <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-link' %>
+      <%= link_to t('bt.edit'), edit_post_path(@post), class: 'btn btn-link' %>
     </h2>
-    Criado em <%= time_tag @post.created_at %>
+    <%= t('created_at') %> <%= time_tag @post.created_at %>
 </header>
   <p><%= @post.content %></p>
 
   <section class="comments">
-    <h3>Comentários</h3>
+    <h3><%= t('.comments') %></h3>
+    
+    <%- unless @post.comments.empty? %>
+      <%= render @post.comments %>
+    <%- else %>
+      <%= t('.empty') %>
+    <% end %>
 
-    <%= render @post.comments %>
     <h3>Comentar</h3>
     <%= simple_form_for(@new_comment) do |f| %>
+      <%= f.error_notification %>
       <%= f.input :author %>
       <%= f.input :message, as: :text %>
       <%= f.input :post_id, as: :hidden, input_html: { value: @post.id } %>

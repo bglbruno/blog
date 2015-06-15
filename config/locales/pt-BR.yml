@@ -1,0 +1,35 @@
+pt-BR:
+  app_name: &app_name Blog 
+  bt:
+    edit: Editar
+    destroy: Remover
+  layouts:
+    application:
+      title: *app_name
+  created_at: Criado em
+  posts:
+    index:
+      title: Posts
+      new: Novo post
+    new:
+      title: Novo post
+    edit:
+      title: Editar post
+    show:
+      comments: Comentários
+      empty: Nenhum comentário
+
+  simple_form:
+    labels:
+      post:
+        title: Título
+        content: Conteúdo
+      comment:
+        author: Autor
+        message: Mensagem
+  mongoid:
+    models:
+      post: Post
+      comment: Comentário
+
+
