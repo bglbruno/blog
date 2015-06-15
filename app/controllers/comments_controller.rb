@@ -1,4 +1,12 @@
 class CommentsController < ApplicationController
+
+  def edit
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to @comment.post }
+    end
+  end
+
   def create
     @comment = Comment.new(comment_params)
     respond_to do |format|
@@ -14,6 +22,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    post = @comment.post
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to post, notice: 'Comentário removido com sucesso.' }
+    end
   end
 
   private

@@ -5,5 +5,8 @@
       <small><%= time_tag comment.created_at %></small>
     </h4>
     <p><%= comment.message %></p>
+    <%= link_to 'Edit', edit_comment_path(comment), class: 'btn btn-link'%>
+    <%= link_to 'Destroy', comment_path(comment),
+                        method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </article>
