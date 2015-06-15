@@ -18,6 +18,7 @@
     <% end %>
 
     <h3>Comentar</h3>
+    <div class="well">
     <%= simple_form_for(@new_comment) do |f| %>
       <%= f.error_notification %>
       <%= f.input :author %>
@@ -25,6 +26,7 @@
       <%= f.input :post_id, as: :hidden, input_html: { value: @post.id } %>
       <%= f.button :submit %>
     <% end %>
+    </div>
     
   </section>
 
