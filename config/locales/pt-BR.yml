@@ -3,6 +3,8 @@ pt-BR:
   bt:
     edit: Editar
     destroy: Remover
+  messages:
+    success: Ação executada com sucesso.
   layouts:
     application:
       title: *app_name
@@ -18,6 +20,9 @@ pt-BR:
     show:
       comments: Comentários
       empty: Nenhum comentário
+  comments:
+    edit:
+      title: Editar comentário
 
   simple_form:
     labels:

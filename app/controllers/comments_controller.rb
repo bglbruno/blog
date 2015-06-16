@@ -8,13 +8,13 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @post.comments.create(comment_params)
-    redirect_to @post, notice: 'Comentário adicionado.' 
+    redirect_to @post, notice: I18n.t(:success, scope: :messages)
   end
 
   def update
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
-    redirect_to @comment.post, notice: 'Comentário atualizado.'
+    redirect_to @comment.post, notice: I18n.t(:success, scope: :messages)
   end
 
   def destroy
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
     post = @comment.post
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to post, notice: 'Comentário removido com sucesso.' }
+      format.html { redirect_to post, notice: I18n.t(:success, scope: :messages) }
     end
   end
 
