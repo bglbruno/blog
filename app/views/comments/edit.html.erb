@@ -1,4 +1,6 @@
-<h2><%= t('.title') %></h2>
+<div class="page-header">
+  <h2><%= t('.title') %></h2>
+</div>
 <%= simple_form_for([@post, @comment]) do |f| %>
   <%= f.error_notification %>
   <%= f.input :author %>

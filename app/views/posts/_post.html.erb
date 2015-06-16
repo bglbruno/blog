@@ -2,8 +2,8 @@
   <header>
     <h3>
       <%= link_to post.title, post %>
+      <small><%= time_tag post.created_at %></small>
     </h3>
-    <%= t 'created_at' %> <%= time_tag post.created_at %>
   </header>
   <p><%= post.content.slice(0, 50) + '...' %></p>
   <%= link_to t('bt.edit'), edit_post_path(post), class: 'btn btn-link' %>
