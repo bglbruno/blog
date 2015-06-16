@@ -3,7 +3,8 @@
     <h2>
       <%= @post.title %>
       <%= link_to t('bt.edit'), edit_post_path(@post), class: 'btn btn-link' %>
-      <%= link_to t('bt.destroy'), post_path(@post), method: :delete, class: 'btn btn-link' %>
+      <%= link_to t('bt.destroy'), post_path(@post), method: :delete,
+                  data: { confirm: I18n.t("are_you_sure") }, class: 'btn btn-link' %>
     </h2>
     <%= t('created_at') %> <%= time_tag @post.created_at %>
 </header>

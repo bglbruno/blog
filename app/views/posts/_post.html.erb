@@ -7,5 +7,6 @@
   </header>
   <p><%= post.content.slice(0, 50) + '...' %></p>
   <%= link_to t('bt.edit'), edit_post_path(post), class: 'btn btn-link' %>
-  <%= link_to t('bt.destroy'), post_path(post), :method => :delete, class: 'btn btn-link' %>
+  <%= link_to t('bt.destroy'), post_path(post), 
+      data: { confirm: I18n.t("are_you_sure") }, :method => :delete, class: 'btn btn-link' %>
 </article>

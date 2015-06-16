@@ -6,6 +6,8 @@
     </h4>
     <p><%= comment.message %></p>
     <%= link_to t('bt.edit'), edit_post_comment_path(comment.post, comment), class: 'btn btn-link'%>
-    <%= link_to t('bt.destroy'), post_comment_path(comment.post, comment), method: :delete, class: 'btn btn-link' %>
+    <%= link_to t('bt.destroy'), post_comment_path(comment.post, comment), 
+                            data: { confirm: I18n.t("are_you_sure") },
+                            method: :delete, class: 'btn btn-link'  %>
   </div>
 </article>

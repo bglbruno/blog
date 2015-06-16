@@ -1,5 +1,6 @@
 pt-BR:
   app_name: &app_name Blog 
+  are_you_sure: Você tem certeza?
   bt:
     edit: Editar
     destroy: Remover
