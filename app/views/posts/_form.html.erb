@@ -1,6 +1,8 @@
-<%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :title %>
-  <%= f.input :content, as: :text %>
-  <%= f.button :submit %>
-<% end %>
+<div class="well">
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :title %>
+    <%= f.input :content, as: :text %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

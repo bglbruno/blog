@@ -1,9 +1,11 @@
 <div class="page-header">
   <h2><%= t('.title') %></h2>
 </div>
-<%= simple_form_for([@post, @comment]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :author %>
-  <%= f.input :message, as: :text %>
-  <%= f.button :submit %>
-<% end %>
+<div class="well">
+  <%= simple_form_for([@post, @comment]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :author %>
+    <%= f.input :message, as: :text %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

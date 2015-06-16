@@ -1,6 +1,8 @@
-<%= simple_form_for([@post, @post.comments.build]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :author %>
-  <%= f.input :message, as: :text %>
-  <%= f.button :submit %>
-<% end %>
+<div class="well">
+  <%= simple_form_for([@post, @post.comments.build]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :author %>
+    <%= f.input :message, as: :text %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
