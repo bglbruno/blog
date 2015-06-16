@@ -1,0 +1,7 @@
+<h2><%= t('.title') %></h2>
+<%= simple_form_for([@post, @comment]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :author %>
+  <%= f.input :message, as: :text %>
+  <%= f.button :submit %>
+<% end %>

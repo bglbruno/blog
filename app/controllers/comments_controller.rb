@@ -1,24 +1,20 @@
 class CommentsController < ApplicationController
 
   def edit
-    @comment = Comment.find(params[:id])
-    respond_to do |format|
-      format.html { redirect_to @comment.post }
-    end
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
   end
 
   def create
-    @comment = Comment.new(comment_params)
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment.post, notice: 'Comentário adicionado com sucesso.' }
-      else
-        format.html { redirect_to @comment.post }
-      end
-    end
+    @post = Post.find(params[:post_id])
+    @post.comments.create(comment_params)
+    redirect_to @post, notice: 'Comentário adicionado.' 
   end
 
   def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    redirect_to @comment.post, notice: 'Comentário atualizado.'
   end
 
   def destroy
@@ -32,7 +28,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:author, :message, :post_id)
+      params.require(:comment).permit(:author, :message)
     end
 
 end
