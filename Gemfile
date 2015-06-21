@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.2"
+
 gem 'rails', '4.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -13,6 +15,7 @@ gem "mongoid", "~> 4.0.0"
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'simple_form'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
@@ -20,3 +23,6 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
