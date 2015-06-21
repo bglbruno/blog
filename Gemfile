@@ -16,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'simple_form'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'mongoid-slug'
+gem 'kaminari'
 gem 'puma'
 
 group :development, :test do

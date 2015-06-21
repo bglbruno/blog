@@ -1,10 +1,18 @@
 <div class="page-header">
-  <h2><%= t('.title') %></h2>
+  <h2>
+    <%= t('.title') %>
+    <%= link_to t('.new'), new_post_path, class: 'btn btn-link' %>
+  </h2>
 </div>
-
-<%= link_to t('.new'), new_post_path, class: 'btn btn-primary' %>
 
 <section class="posts">
   <%= render @posts %>
 </section>
 
+<div class="col-xs-12 text-center">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= paginate @posts %>
+    </div>
+  </div>
+</div>

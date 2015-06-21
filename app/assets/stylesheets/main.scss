@@ -1,3 +1,8 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 h2, h3{
   text-transform: capitalize;
 }
@@ -8,10 +13,18 @@ h2, h3{
   word-wrap: break-word;
 }
 
+.posts{
+  overflow: hidden;
+  margin-bottom: 2%; 
+}
+
 .post{
   p { 
     @extend .pre;
   }
+  background-color: #f3f3f3;
+  padding: 1% 5%;
+  margin: 1% 0;
 }
 
 .comments{
