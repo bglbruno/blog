@@ -10,6 +10,7 @@ pt-BR:
     application:
       title: *app_name
   created_at: Criado em
+  updated_at: Atualizado em
   posts:
     index:
       title: Posts

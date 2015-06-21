@@ -1,14 +1,16 @@
 <div class="col-xs-12 col-sm-6 col-md-4">
   <article class="post">
     <header>
-      <h3>
-        <%= link_to post.title, post %>
-        <small><%= time_tag post.created_at %></small>
-      </h3>
+      <h3><%= link_to post.title, post %></h3>
     </header>
-    <p><%= post.content.slice(0, 50) + '...' %></p>
-    <%= link_to t('bt.edit'), edit_post_path(post), class: 'btn btn-link' %>
-    <%= link_to t('bt.destroy'), post_path(post), 
-        data: { confirm: I18n.t("are_you_sure") }, :method => :delete, class: 'btn btn-link' %>
+    <p class="preview"><%= post.content.slice(0, 50) + '...' %></p>
+    <footer>
+      <%= time_tag post.created_at %>
+      <div class="btn-group">
+        <%= link_to t('bt.edit'), edit_post_path(post), class: 'btn btn-link btn-xs' %>
+        <%= link_to t('bt.destroy'), post_path(post), 
+          data: { confirm: I18n.t("are_you_sure") }, :method => :delete, class: 'btn btn-link btn-xs' %>
+      </div>
+    </footer>
   </article>
 </div>

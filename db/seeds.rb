@@ -8,4 +8,8 @@
 200.times do |i|
   p = Post.create(title: 'Post ' + i.to_s, content: '123456789101112131415')
   p.save
+  50.times do |j|
+    c = Comment.create(author: 'Autor ' + j.to_s, message: 'Mensagem ' + j.to_s, post: p)
+    c.save
+  end
 end

@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @post.comments.page params[:page]
   end
 
   def new

@@ -7,19 +7,27 @@
         <%= link_to t('bt.destroy'), post_path(@post), method: :delete,
                     data: { confirm: I18n.t("are_you_sure") }, class: 'btn btn-link' %>
       </h2>
-      <%= t('created_at') %> <%= time_tag @post.created_at %>
+      <%= t('created_at') %> <%= time_tag @post.created_at %>,
+      <%= t('updated_at') %> <%= time_tag @post.updated_at %>
     </div>
   </header>
   <p><%= @post.content %></p>
 
   <section class="comments">
-    <h3><%= t('.comments') %></h3>
+    <h3>
+      <%= t('.comments') %>
+      <span class="label label-default">
+        <%= @comments.size %>
+      </span>
+    </h3>
     
-    <%- unless @post.comments.empty? %>
-      <%= render @post.comments %>
+    <%- unless @comments.empty? %>
+      <%= render @comments %>
     <%- else %>
       <%= t('.empty') %>
     <% end %>
+
+    <%= paginate @comments %>
 
     <h3>Comentar</h3>
     <%= render 'comments/form' %>

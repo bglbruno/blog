@@ -1,13 +1,24 @@
-<article class="comment">
-  <div class="well">
-    <h4>
-      <span class="author"><%= comment.author %></span>
-      <small><%= time_tag comment.created_at %></small>
-    </h4>
-    <p><%= comment.message %></p>
-    <%= link_to t('bt.edit'), edit_post_comment_path(comment.post, comment), class: 'btn btn-link'%>
-    <%= link_to t('bt.destroy'), post_comment_path(comment.post, comment), 
-                            data: { confirm: I18n.t("are_you_sure") },
-                            method: :delete, class: 'btn btn-link'  %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <article class="comment">
+      <header>
+        <h4>
+          <%= comment.author %>
+          <small>
+            <div class="btn-group">
+              <%= link_to t('bt.edit'), edit_post_comment_path(comment.post, comment), class: 'btn btn-link btn-xs'%>
+              <%= link_to t('bt.destroy'), post_comment_path(comment.post, comment), 
+                                      data: { confirm: I18n.t("are_you_sure") },
+                                      method: :delete, class: 'btn btn-link btn-xs'  %>
+            </div>
+          </small>
+        </h4>
+      </header>
+      <p><%= comment.message %></p>
+      <small>
+        <%= t('created_at') %>: <%= time_tag comment.created_at %>,
+        <%= t('updated_at') %>: <%= time_tag comment.updated_at %>
+      </small>
+    </article>
   </div>
-</article>
+</div>

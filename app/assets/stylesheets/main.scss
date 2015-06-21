@@ -21,19 +21,20 @@ h2, h3{
 .post{
   p { 
     @extend .pre;
+    &.preview{
+      color: #666;
+    }
   }
-  background-color: #f3f3f3;
-  padding: 1% 5%;
-  margin: 1% 0;
+  time{
+    color: #999;
+  }
 }
 
 .comments{
   padding: 1%;
-
   .comment{
     p {
       @extend .pre;
-      padding: 1% 0;
     }
   }
 }
