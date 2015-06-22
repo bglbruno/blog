@@ -18,6 +18,7 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'mongoid-slug'
 gem 'kaminari'
 gem 'puma'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug'

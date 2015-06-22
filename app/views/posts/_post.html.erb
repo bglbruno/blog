@@ -3,7 +3,7 @@
     <header>
       <h3><%= link_to post.title, post %></h3>
     </header>
-    <p class="preview"><%= post.content.slice(0, 50) + '...' %></p>
+    <p class="preview"><%= post.preview %></p>
     <footer>
       <%= time_tag post.created_at %>
       <div class="btn-group">

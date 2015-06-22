@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    markdown = Redcarpet::Markdown.new(PostRenderer)
+    @post.content = markdown.render(@post.content)
     @comments = @post.comments.page params[:page]
   end
 
@@ -56,6 +58,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :preview, :content)
     end
 end

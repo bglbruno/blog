@@ -2,6 +2,7 @@
   <%= simple_form_for(@post) do |f| %>
     <%= f.error_notification %>
     <%= f.input :title %>
+    <%= f.input :preview %>
     <%= f.input :content, as: :text %>
     <%= f.button :submit %>
   <% end %>
