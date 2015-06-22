@@ -4,4 +4,4 @@ pt-BR:
       text: 'Obrigatório'
       mark: '*'
     error_notification:
-      default_message: "Por favor, revise os seguintes problemas:"
+      default_message: "Por favor, revise os dados inseridos"

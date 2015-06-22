@@ -32,10 +32,20 @@ pt-BR:
     labels:
       post:
         title: Título
+        preview: Apresentação
         content: Conteúdo
       comment:
         author: Autor
         message: Mensagem
+    hints:
+      post:
+        title: Utilize um título breve e direto
+        preview: O texto de apresentação é um resumo do seu conteúdo
+    placeholders:
+      post:
+        title: Título da sua postagem 
+        preview: Texto de apresentação
+        content: Escreva seu conteúdo 
   mongoid:
     models:
       post: Post
