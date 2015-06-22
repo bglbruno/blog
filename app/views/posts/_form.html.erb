@@ -3,7 +3,12 @@
     <%= f.error_notification %>
     <%= f.input :title %>
     <%= f.input :preview %>
+    
     <%= f.input :content, as: :text %>
+    <div class="col-xs-12">
+      <%= link_to t('.markdown_supported'), 'https://guides.github.com/features/mastering-markdown/', target: "_blank", class: 'btn btn-link' %>
+    </div>
+
     <%= f.button :submit %>
   <% end %>
 </div>

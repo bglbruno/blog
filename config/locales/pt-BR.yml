@@ -22,6 +22,8 @@ pt-BR:
     show:
       comments: Comentários
       empty: Nenhum comentário
+    form:
+      markdown_supported: Markdown suportado (Semelhante ao do github)
   comments:
     edit:
       title: Editar comentário
