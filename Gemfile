@@ -20,6 +20,10 @@ gem 'kaminari'
 gem 'puma'
 gem 'redcarpet'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-markdown-it'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

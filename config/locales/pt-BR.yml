@@ -24,6 +24,7 @@ pt-BR:
       empty: Nenhum comentário
     form:
       markdown_supported: Markdown suportado (Semelhante ao do github)
+      post_preview: Pré-visualização
   comments:
     edit:
       title: Editar comentário
